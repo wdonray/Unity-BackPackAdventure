@@ -2,22 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using ScriptableObjects;
 public class BackPack : MonoBehaviour
 {
+    public BackPackConfig Start_Items;
+    public List<Item> Inventory = new List<Item>();
+    public int Capacity;
 
-    public List<ScriptableObjects.Item> Inventory;
-    private int test;
-    private int ID_Count;
-    //public GameObject swordPrefab;
-    //public GameObject contentWindow;
-    //public GameObject shieldPrefab;
     // Use this for initialization
     void Start()
     {
-        ID_Count = 0;
+        Capacity = Start_Items.Capacity;
     }
-
+    void Add(Item item)
+    {
+        if (Inventory.Count < Capacity)
+            Inventory.Add(Instantiate(item));
+    }
+    void Remove(Item item)
+    {
+        if (Inventory.Contains(item))
+            Inventory.Remove(item);
+    }
+}
     // Update is called once per frame
     //void Update()
     //{
@@ -60,18 +67,17 @@ public class BackPack : MonoBehaviour
     //    if (Input.GetKeyDown(KeyCode.Delete))
     //        Inventory.Clear();
     //}
-}
-    
 //    void AddKnife()
 //    {
-//        var go = Instantiate(swordPrefab, contentWindow.transform);
-
-//        go.AddComponent<DestroyAfterTime>();
-//        var sprites = Resources.LoadAll<Sprite>("sword_sprites");
-//        var numsprites = sprites.Length;
-//        var randomSprite = Random.Range(0, numsprites);
-//        go.GetComponent<Image>().sprite = sprites[randomSprite];
+//        var Knife = new ScriptableObjects.CombatKnife();
+//        Knife.Identification = ID_Count;
+//        Knife.Name = "CombatKnife" + ID_Count;
+//        Inventory.Add(Knife);
+//        Inventory_Text.text += Knife.name;
 //    }
+//}
+
+
 //    void AddShield()
 //    {
 //        var go = Instantiate(shieldPrefab, contentWindow.transform);
