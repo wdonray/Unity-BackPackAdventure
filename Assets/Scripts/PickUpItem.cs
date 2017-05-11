@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MakeObjects: MonoBehaviour {
-
-    public GameObject prefab;
-
+public class PickUpItem : MonoBehaviour {
+    public BackPack backPack;
 	// Use this for initialization
 	void Start () {
-        Instantiate(prefab);
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		   
-         
+		
 	}
 
-    
+    void OnCollisonEnter(Collider col)
+    {
+        if (col.CompareTag("Player"))
+        {
+
+        }
+    }
 
 }
