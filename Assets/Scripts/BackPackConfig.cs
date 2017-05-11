@@ -9,5 +9,6 @@ namespace ScriptableObjects
     {
         public List<Item> INIT_Inventory = new List<Item>();
         public int Capacity = 25;
+        public List<Item> Items { get { return INIT_Inventory; } }
     }
 }
