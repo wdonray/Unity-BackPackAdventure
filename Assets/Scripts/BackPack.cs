@@ -28,7 +28,7 @@ public class BackPack : MonoBehaviour
             AddToStash(startItems);
         }
     }
-    // Testing: Working
+    // Testing: Working 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
