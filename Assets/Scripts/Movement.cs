@@ -2,21 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MakeObjects: MonoBehaviour {
-
-    public GameObject prefab;
+public class Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Instantiate(prefab);
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		   
-         
+		
 	}
-
-    
-
 }

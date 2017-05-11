@@ -12,12 +12,12 @@ public class ItemPickUpBehavior : MonoBehaviour {
         item_runtime = Instantiate(item_config);
     }
 
-    private void OnTriggerEnter2D(Collision2D other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.GetComponent<BackPack>().Inventory.Add(item_runtime);
-        }
+        Debug.Log("on trigger" + other.gameObject.name);
+        
+        other.gameObject.GetComponent<BackPack>().AddToStash(item_runtime);
+       
     }
     
 }
