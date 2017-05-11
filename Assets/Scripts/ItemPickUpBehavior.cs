@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickUpBehavior : MonoBehaviour {
+public class ItemPickUpBehavior : MonoBehaviour
+{
 
     public ScriptableObjects.Item item_config;
     public ScriptableObjects.Item item_runtime;
@@ -12,12 +13,12 @@ public class ItemPickUpBehavior : MonoBehaviour {
         item_runtime = Instantiate(item_config);
     }
 
+    
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("on trigger" + other.gameObject.name);
-        
+        Debug.Log(string.Format("on trigger " + other.gameObject.name));
+
         other.gameObject.GetComponent<BackPack>().AddToStash(item_runtime);
-       
     }
-    
+
 }
