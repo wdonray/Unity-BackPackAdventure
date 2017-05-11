@@ -7,8 +7,8 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "BackPackConfig", menuName = "Item/Equipment/BackPackConfig", order = 1)]
     public class BackPackConfig : ScriptableObject
     {
-        public List<Item> INIT_Inventory = new List<Item>();
+        public List<Item> InitInventory = new List<Item>();
         public int Capacity = 25;
-        public List<Item> Items { get { return INIT_Inventory; } }
+        public List<Item> Items { get { return InitInventory; } }
     }
 }
