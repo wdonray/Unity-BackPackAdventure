@@ -38,7 +38,7 @@ public class BackPack : MonoBehaviour
     {
         if (Inventory.Count >= ListCapicty) return;
         Inventory.Add(item);
-        Debug.Log("Added: " +item.GetType().ToString());
+        Debug.Log("Added: " + item.GetType().ToString());
     }
     // If the list contains the item remove it from the list
     public void RemoveFromStash(Item item)
