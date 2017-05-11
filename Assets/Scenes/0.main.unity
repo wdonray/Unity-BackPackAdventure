@@ -292,9 +292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d4f499569ee5b459510ddd105d7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backpackConfig: {fileID: 11400000, guid: 48f45fda498e58045af1e72406b85cd3, type: 2}
+  BackPackConfig: {fileID: 11400000, guid: 48f45fda498e58045af1e72406b85cd3, type: 2}
   Inventory: []
-  listCapicty: 0
+  ListCapicty: 0
 --- !u!4 &1769119110
 Transform:
   m_ObjectHideFlags: 0
