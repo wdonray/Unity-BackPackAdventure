@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MakeObjects: MonoBehaviour {
 
-    
+    public GameObject prefab;
 	// Use this for initialization
 	void Start () {
-        Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube));
+        Instantiate(prefab);
 	}
 	
 	// Update is called once per frame
