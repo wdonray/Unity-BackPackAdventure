@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90df59fc3575128498f5b3b4f4162c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item_config: {fileID: 11400000, guid: 818be24e0cc20f943b7ee6448ccaf4fe, type: 2}
+  item_config: {fileID: 11400000, guid: f99948d13f9297644bd71351853208d2, type: 2}
   item_runtime: {fileID: 0}
 --- !u!212 &212629176652912040
 SpriteRenderer:
