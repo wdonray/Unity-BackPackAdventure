@@ -28,13 +28,13 @@ public class BackPack : MonoBehaviour
             AddToStash(startItems);
         }
     }
-    // Testing: Working 
+    // Testing: Working
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
             AddToStash(_knife);
         else if (Input.GetKeyDown(KeyCode.S))
-            RemoveFromStash(_knife);
+            RemoveAllFromStash();
     }
     /// Adding in any item taken in to the list if not over Capicity
     public void AddToStash(Item item)
@@ -68,11 +68,13 @@ public class BackPack : MonoBehaviour
         if (Inventory == null) return;
         BackPackChange.Invoke(this);
         Inventory = new List<Item>();
+        Debug.Log("Cleared Inventory");
         foreach (var i in BackPackConfig.Items)
         {
             var startItems = Instantiate(i);
             AddToStash(startItems);
         }
+
     }
     // Used in more then once place
     private void AddInfo(Item item)
@@ -86,11 +88,13 @@ public class BackPack : MonoBehaviour
     public void RaiseCapacity(int amount)
     {
         ListCapicty += amount;
+        Debug.Log("Raised Capacity by:" + amount);
     }
     // Lower the list capacity
     public void LowerCapacity(int amount)
     {
         ListCapicty -= amount;
+        Debug.Log("Lowered Capacity by:" + amount);
     }
 
     public class OnBackPackChange : UnityEvent<BackPack>
