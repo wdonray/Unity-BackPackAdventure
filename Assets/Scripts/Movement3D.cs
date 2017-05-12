@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class Movement3D : MonoBehaviour
 {
-    private float speed = 25f;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
+    [Range(1.0f, 25.0f)]
+    public float Speed;
 	// Update is called once per frame
-	void Update ()
+    private void Update ()
 	{
 	    var h = Input.GetAxis("Horizontal");
 	    var v = Input.GetAxis("Vertical");
 
         var move = new Vector3(h, v, 0);
 
-	    transform.localPosition += move * speed * Time.deltaTime ;
+	    transform.localPosition += move * Speed * Time.deltaTime ;
 	}
 }

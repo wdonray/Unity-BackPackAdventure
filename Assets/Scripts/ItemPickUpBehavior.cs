@@ -1,13 +1,16 @@
 ﻿using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ItemPickUpBehavior : MonoBehaviour
 {
+  
     public Item item_config;
     public Item item_runtime;
 
     private void Start()
     {
+
         item_runtime = Instantiate(item_config);
     }
 
@@ -21,5 +24,10 @@ public class ItemPickUpBehavior : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.red;
         gameObject.GetComponent<BoxCollider>().enabled = false;
         Destroy(gameObject, 1f);
+
+
+        //if (!other.gameObject.CompareTag("Item"))
+        //    return;
+        //other.gameObject.transform.position += 
     }
 }
