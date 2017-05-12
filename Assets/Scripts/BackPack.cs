@@ -29,13 +29,13 @@ public class BackPack : MonoBehaviour
         }
     }
     // Testing: Working
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            AddToStash(_knife);
-        else if (Input.GetKeyDown(KeyCode.S))
-            RemoveAllFromStash();
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //        AddToStash(_knife);
+    //    else if (Input.GetKeyDown(KeyCode.S))
+    //        RemoveAllFromStash();
+    //}
     /// Adding in any item taken in to the list if not over Capicity
     public void AddToStash(Item item)
     {
@@ -74,7 +74,6 @@ public class BackPack : MonoBehaviour
             var startItems = Instantiate(i);
             AddToStash(startItems);
         }
-
     }
     // Used in more then once place
     private void AddInfo(Item item)
@@ -99,7 +98,7 @@ public class BackPack : MonoBehaviour
 
     public class OnBackPackChange : UnityEvent<BackPack>
     {
-        
+
     }
     public OnBackPackChange BackPackChange = new OnBackPackChange();
 }
