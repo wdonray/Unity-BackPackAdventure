@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 1998302280}
   - component: {fileID: 1998302281}
   - component: {fileID: 1998302277}
+  - component: {fileID: 1998302282}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -417,3 +418,14 @@ MonoBehaviour:
   BackPackConfig: {fileID: 11400000, guid: 48f45fda498e58045af1e72406b85cd3, type: 2}
   Inventory: []
   ListCapicty: 0
+--- !u!114 &1998302282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1998302275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3ce73c26a6f354dae98252ab2bfb40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -17,8 +17,9 @@ public class ItemPickUpBehavior : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(string.Format("on trigger " + other.gameObject.name));
-
         other.gameObject.GetComponent<BackPack>().AddToStash(item_runtime);
+        //gameObject.SetActive(false);
     }
+
 
 }
