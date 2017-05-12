@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScriptableObjects
 {
-    public class Potion : Item
+    public abstract class Potion : Item
     {
 
 

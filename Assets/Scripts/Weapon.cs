@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ScriptableObjects
 {
     [CreateAssetMenu(fileName = "Weapon", menuName = "Item/Equipment/Weapon", order = 1)]
-    public class Weapon : Equipment
+    public abstract class Weapon : Equipment
     {
         void DoDamage()
         {
