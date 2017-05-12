@@ -12,7 +12,7 @@ public class BackPack : MonoBehaviour
     public List<Item> Inventory; // List to add items to
     public int ListCapicty; // Variable to set equal to the capacity in the config 
 
-    private CombatKnife _knife; // Used for testing 
+    //private CombatKnife _knife; // Used for testing 
 
     private int _idcount;
     // Use this for initialization
@@ -20,7 +20,7 @@ public class BackPack : MonoBehaviour
     {
         _idcount = 0;
         Inventory = new List<Item>();
-        _knife = new CombatKnife();
+        //_knife = new CombatKnife();
         ListCapicty = BackPackConfig.Capacity;
         foreach (var i in BackPackConfig.Items)
         {
