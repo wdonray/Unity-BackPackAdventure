@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScriptableObjects
 {
-    public class Armor : Equipment
+    public abstract class Armor : Equipment
     {
 
     }
