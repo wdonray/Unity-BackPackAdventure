@@ -1,19 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using ScriptableObjects;
 using UnityEngine;
 
 public class ItemPickUpBehavior : MonoBehaviour
 {
-
-    public ScriptableObjects.Item item_config;
-    public ScriptableObjects.Item item_runtime;
+    public Item item_config;
+    public Item item_runtime;
 
     private void Start()
     {
         item_runtime = Instantiate(item_config);
     }
 
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.CompareTag("Player"))
@@ -24,6 +22,4 @@ public class ItemPickUpBehavior : MonoBehaviour
         gameObject.GetComponent<BoxCollider>().enabled = false;
         Destroy(gameObject, 1f);
     }
-
-
 }
