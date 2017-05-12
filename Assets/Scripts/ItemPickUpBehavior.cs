@@ -16,9 +16,13 @@ public class ItemPickUpBehavior : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.gameObject.CompareTag("Player"))
+            return;
         Debug.Log(string.Format("on trigger " + other.gameObject.name));
         other.gameObject.GetComponent<BackPack>().AddToStash(item_runtime);
-        //gameObject.SetActive(false);
+        GetComponent<SpriteRenderer>().color = Color.red;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        Destroy(gameObject, 1f);
     }
 
 
