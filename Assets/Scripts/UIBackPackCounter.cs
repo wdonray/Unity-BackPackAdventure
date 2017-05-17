@@ -15,9 +15,8 @@ public class UIBackPackCounter : MonoBehaviour
 
     public void UpdateText(BackPack bag)
     {
-        if (bag.Inventory.Count < bag.ListCapicty)
-            TheText.text = bag.Inventory.Count.ToString();
-        else
-            TheText.text = bag.Inventory.Count.ToString() + " Maxed";
+        TheText.text = "Items: \n";
+        foreach (var item in bag.Inventory)
+            TheText.text += item.name + "\n";
     }
 }
