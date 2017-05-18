@@ -10,7 +10,7 @@ public class UILog : MonoBehaviour
     public float time = 2.0f;
     private void Start()
     {
-        text.text = "";
+        text.text = " ";
     }
 
     private void Update()
