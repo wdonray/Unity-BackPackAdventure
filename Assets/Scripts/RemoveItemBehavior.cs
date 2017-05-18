@@ -26,5 +26,7 @@ public class RemoveItemBehavior : MonoBehaviour
 
         var removedItemGameObject = Instantiate(prefab, transform.localPosition + Vector3.up * 5f, transform.rotation);
         removedItemGameObject.GetComponent<ItemPickUpBehavior>().item_config = itemToRemove;
+        
     }
+
 }
