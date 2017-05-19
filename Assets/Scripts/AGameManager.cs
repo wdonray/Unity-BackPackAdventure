@@ -14,13 +14,13 @@ public class AGameManager : ScriptableObject
     private string _thisSceneName;
 
     public GameObject ItemPrefab;
+
+    public List<GameObject> ItemList = new List<GameObject>();
 #if UNITY_EDITOR
     [CustomEditor(typeof(AGameManager))]
     public class InspectorGameManager : Editor
     {
         public GameObject GoItem;
-        [HideInInspector]
-        public GameObject Parent =new GameObject();
 
         public override void OnInspectorGUI()
         {
@@ -33,6 +33,7 @@ public class AGameManager : ScriptableObject
                     if (scene != null)
                         SceneManager.LoadScene(scene._thisSceneName);
                 }
+                EditorGUILayout.LabelField("^Restarts the scene");
             }
             else if (Application.isPlaying == false)
             {
@@ -43,10 +44,10 @@ public class AGameManager : ScriptableObject
                         GoItem = Instantiate(scene.ItemPrefab,
                             scene.ItemPrefab.transform.position,
                             Quaternion.identity);
-                        
-                        GoItem.transform.SetParent(Parent.transform);
+                        scene.ItemList.Add(GoItem);
                     }
                 }
+                EditorGUILayout.LabelField("^Spawns one item with a default Item Behavior");
                 if (GUILayout.Button("Remove Item", GUILayout.ExpandWidth(false)))
                 {
                     if (scene != null)
@@ -54,6 +55,7 @@ public class AGameManager : ScriptableObject
                         DestroyImmediate(GoItem);
                     }
                 }
+                EditorGUILayout.LabelField("^Only removes the last item you spawned");
             }
         }
     }
