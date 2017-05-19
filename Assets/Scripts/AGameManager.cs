@@ -14,8 +14,6 @@ public class AGameManager : ScriptableObject
     private string _thisSceneName;
 
     public GameObject ItemPrefab;
-
-    public List<GameObject> ItemList = new List<GameObject>();
 #if UNITY_EDITOR
     [CustomEditor(typeof(AGameManager))]
     public class InspectorGameManager : Editor
@@ -44,7 +42,6 @@ public class AGameManager : ScriptableObject
                         GoItem = Instantiate(scene.ItemPrefab,
                             scene.ItemPrefab.transform.position,
                             Quaternion.identity);
-                        scene.ItemList.Add(GoItem);
                     }
                 }
                 EditorGUILayout.LabelField("^Spawns one item with a default Item Behavior");
