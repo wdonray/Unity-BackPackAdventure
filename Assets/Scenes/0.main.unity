@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d4f499569ee5b459510ddd105d7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FileNameToSave: SaveFile
+  FileNameToSave: Test2
   BackPackChange:
     m_PersistentCalls:
       m_Calls:
@@ -1205,6 +1205,7 @@ MonoBehaviour:
   BackPackConfig: {fileID: 0}
   Inventory: []
   ListCapicty: 0
+  __Inventory: []
 --- !u!114 &1939013213
 MonoBehaviour:
   m_ObjectHideFlags: 0
