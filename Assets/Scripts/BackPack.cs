@@ -8,7 +8,7 @@ public class BackPack : MonoBehaviour
 {
     private int _idcount;
 
-    private CombatKnife _knife; // Used for testing 
+    //private CombatKnife _knife; // Used for testing 
 
     public OnBackPackChange BackPackChange = new OnBackPackChange();
     public BackPackConfig BackPackConfig; // Referencing the BackPackConfig
@@ -20,7 +20,7 @@ public class BackPack : MonoBehaviour
     {
         _idcount = 0;
         Inventory = new List<Item>();
-        _knife = new CombatKnife();
+        //_knife = new CombatKnife();
         ListCapicty = BackPackConfig.Capacity;
         foreach (var i in BackPackConfig.Items)
         {
@@ -30,13 +30,13 @@ public class BackPack : MonoBehaviour
     }
 
     // Testing: Working
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            AddToStash(_knife);
-        else if (Input.GetKeyDown(KeyCode.Delete))
-            RemoveFromStash(_knife);
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //        AddToStash(_knife);
+    //    else if (Input.GetKeyDown(KeyCode.Delete))
+    //        RemoveFromStash(_knife);
+    //}
 
     /// Adding in any item taken in to the list if not over Capicity
     public void AddToStash(Item item)

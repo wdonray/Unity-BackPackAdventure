@@ -11,4 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ce90ca4945f0d458c52fa681b5b4fd, type: 3}
   m_Name: AGameManager
   m_EditorClassIdentifier: 
-  _thisSceneName: 
+  _thisSceneName: 0.main
+  ItemPrefab: {fileID: 1827305299032082, guid: 384a44d2165e8cc49a0fae3dc42fb79b, type: 2}
