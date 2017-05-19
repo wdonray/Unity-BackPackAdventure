@@ -11,5 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929caeea484374f4a8d2e31e552a296c, type: 3}
   m_Name: CombatBackPackConfig
   m_EditorClassIdentifier: 
-  InitInventory: []
-  Capacity: 25
+  InitInventory:
+  - {fileID: 11400000, guid: 818be24e0cc20f943b7ee6448ccaf4fe, type: 2}
+  - {fileID: 11400000, guid: f99948d13f9297644bd71351853208d2, type: 2}
+  - {fileID: 11400000, guid: f99948d13f9297644bd71351853208d2, type: 2}
+  - {fileID: 11400000, guid: ce3f12ecc91542848bb99ecd084ffd94, type: 2}
+  - {fileID: 11400000, guid: de9da5e5fc4cf414b835790e23304b90, type: 2}
+  Capacity: 100
