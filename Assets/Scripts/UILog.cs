@@ -25,7 +25,7 @@ public class UILog : MonoBehaviour
 
 
     public void OnItemAction(ScriptableObjects.Item item)
-    {
+    {  
         text.text = item.name + "\n";
     }
 

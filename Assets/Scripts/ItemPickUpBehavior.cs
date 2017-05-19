@@ -11,10 +11,8 @@ public class ItemPickUpBehavior : MonoBehaviour
     public CollisionEvent collisionEvent = new CollisionEvent();
     private void Start()
     {
-
         item_runtime = Instantiate(item_config);
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,12 +25,15 @@ public class ItemPickUpBehavior : MonoBehaviour
         gameObject.GetComponent<BoxCollider>().enabled = false;
         Destroy(gameObject, 1f);
 
+        if (other.gameObject.CompareTag("Item"))
+            other.gameObject.transform.position += Vector3.left;
+
     }
 
     [Serializable]
     public class CollisionEvent : UnityEvent<Item>
     {
-        
+
     }
 
 }

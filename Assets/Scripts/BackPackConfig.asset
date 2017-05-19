@@ -11,6 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929caeea484374f4a8d2e31e552a296c, type: 3}
   m_Name: BackPackConfig
   m_EditorClassIdentifier: 
-  InitInventory:
-  - {fileID: 11400000, guid: 818be24e0cc20f943b7ee6448ccaf4fe, type: 2}
+  InitInventory: []
   Capacity: 25
