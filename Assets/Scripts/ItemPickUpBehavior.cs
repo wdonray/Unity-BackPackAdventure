@@ -27,6 +27,9 @@ public class ItemPickUpBehavior : MonoBehaviour
         gameObject.GetComponent<BoxCollider>().enabled = false;
         Destroy(gameObject, 1f);
 
+        if (other.gameObject.CompareTag("Item"))
+            other.transform.position += Vector3.left;
+
     }
 
     [Serializable]

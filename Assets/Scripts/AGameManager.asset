@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _thisSceneName: 0.main
   ItemPrefab: {fileID: 1827305299032082, guid: 384a44d2165e8cc49a0fae3dc42fb79b, type: 2}
+  ItemList: []
