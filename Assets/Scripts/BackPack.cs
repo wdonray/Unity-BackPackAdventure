@@ -8,6 +8,8 @@ public class BackPack : MonoBehaviour
 {
     private int _idcount;
 
+    public Player test;
+
     //private CombatKnife _knife; // Used for testing 
 
     public OnBackPackChange BackPackChange = new OnBackPackChange();
@@ -27,16 +29,24 @@ public class BackPack : MonoBehaviour
             var startItems = Instantiate(i);
             AddToStash(startItems);
         }
+
+        test.Health = 20;
+        test.Mana = 10;
+        test.SavePlayer("Don", test);
     }
 
     // Testing: Working
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //        AddToStash(_knife);
-    //    else if (Input.GetKeyDown(KeyCode.Delete))
-    //        RemoveFromStash(_knife);
-    //}
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            test.Health -= 5;
+        if (Input.GetKeyDown(KeyCode.S))
+            test.SavePlayer("Don", test);
+        if (Input.GetKeyDown(KeyCode.L))
+            test = test.LoadPlayer("Don");
+        //else if (Input.GetKeyDown(KeyCode.Delete))
+        //    RemoveFromStash(_knife);
+    }
 
     /// Adding in any item taken in to the list if not over Capicity
     public void AddToStash(Item item)
