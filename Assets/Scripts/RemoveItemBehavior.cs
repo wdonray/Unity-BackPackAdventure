@@ -24,7 +24,7 @@ public class RemoveItemBehavior : MonoBehaviour
         var itemToRemove = playerBackPack.Inventory[randomItemIndex];
         playerBackPack.RemoveFromStash(itemToRemove);
 
-        var removedItemGameObject = Instantiate(prefab, transform.localPosition + Vector3.up * 5f, transform.rotation);
+        var removedItemGameObject = Instantiate(prefab, transform.localPosition + Vector3.up * 5f, prefab.transform.rotation);
         removedItemGameObject.GetComponent<ItemPickUpBehavior>().item_config = itemToRemove;
         
     }
