@@ -13,7 +13,7 @@ public class UIBackPackCounter : MonoBehaviour
         TheText = GetComponent<Text>();
     }
 
-    public void UpdateText(BackPack bag)
+    public void UpdateText(BackPackBehaviour bag)
     {
         TheText.text = "Items: \n";
         if (bag.Inventory == null)

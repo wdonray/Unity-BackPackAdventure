@@ -10,7 +10,7 @@ using UnityEngine.Assertions;
 using UnityEditor;
 
 #endif
-public class BackPack : MonoBehaviour
+public class BackPackBehaviour : MonoBehaviour
 {
     public string FileNameToSave;
     private int _idcount;
@@ -120,7 +120,7 @@ public class BackPack : MonoBehaviour
         #endregion
         if (backpack == null)
             backpack = ScriptableObject.CreateInstance<BackPackConfig>();
-        Assert.IsNotNull(backpack, "BackPack should not be null");
+        Assert.IsNotNull(backpack, "BackPackBehaviour should not be null");
         var asset = Resources.FindObjectsOfTypeAll<BackPackConfig>().FirstOrDefault();
         JsonUtility.FromJsonOverwrite(json, asset);
         backpack = asset;

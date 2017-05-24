@@ -1194,14 +1194,14 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1939013212}
-          m_ObjectArgumentAssemblyTypeName: BackPack, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: BackPackBehaviour, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: BackPack+OnBackPackChange, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: BackPackBehaviour+OnBackPackChange, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   BackPackConfig: {fileID: 11400000, guid: 48f45fda498e58045af1e72406b85cd3, type: 2}
   Inventory: []
   ListCapacity: 0
