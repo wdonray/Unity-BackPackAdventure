@@ -83,9 +83,9 @@ public class BackPack : MonoBehaviour
 
     public void SaveBackPack(string filename, BackPackConfig backPack)
     {
-        //var bp = ScriptableObject.CreateInstance<BackPackConfig>();
-        //bp.InitInventory = backPack.InitInventory;
-        currentBackPack.InitInventory = Inventory;
+        var bp = ScriptableObject.CreateInstance<BackPackConfig>();
+        bp.InitInventory = backPack.InitInventory;
+        //currentBackPack.InitInventory = Inventory;
         var json = JsonUtility.ToJson(currentBackPack, true);
         var path = Application.persistentDataPath + string.Format("/{0}.json", filename);
         File.WriteAllText(path, json);
