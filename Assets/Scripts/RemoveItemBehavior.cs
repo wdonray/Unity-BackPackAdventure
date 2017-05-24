@@ -2,19 +2,19 @@
 
 public class RemoveItemBehavior : MonoBehaviour
 {
-    private BackPack playerBackPack;
+    private BackPackBehaviour playerBackPack;
     public GameObject prefab;
 
     // Use this for initialization
     private void Start()
     {
-        playerBackPack = GetComponent<BackPack>();
+        playerBackPack = GetComponent<BackPackBehaviour>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (GetComponent<BackPack>().Inventory.Count <= 0)
+        if (GetComponent<BackPackBehaviour>().Inventory.Count <= 0)
             return;
 
         if (!Input.GetKeyDown(KeyCode.I))

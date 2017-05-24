@@ -20,7 +20,7 @@ public class ItemPickUpBehavior : MonoBehaviour
             return;
         collisionEvent.Invoke(item_runtime);
         Debug.Log(string.Format("on trigger " + other.gameObject.name));
-        other.gameObject.GetComponent<BackPack>().AddToStash(item_runtime);
+        other.gameObject.GetComponent<BackPackBehaviour>().AddToStash(item_runtime);
         GetComponent<SpriteRenderer>().color = Color.red;
         gameObject.GetComponent<BoxCollider>().enabled = false;
         Destroy(gameObject, 1f);
