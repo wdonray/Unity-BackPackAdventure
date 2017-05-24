@@ -18,18 +18,16 @@ public class BackPack : MonoBehaviour
     public OnBackPackChange BackPackChange = new OnBackPackChange();
     public BackPackConfig BackPackConfig; // Referencing the BackPackConfig
     public List<Item> Inventory; // List to add items to
-    public int ListCapicty; // Variable to set equal to the capacity in the config 
-    public List<Item> __Inventory = new List<Item>();
+    public int ListCapacity; // Variable to set equal to the capacity in the config 
     private BackPackConfig currentBackPack;
 
     // Use this for initialization
     private void Start()
     {
+        ListCapacity = BackPackConfig.Capacity;
         _idcount = 0;
         Inventory = new List<Item>();
         currentBackPack = ScriptableObject.CreateInstance<BackPackConfig>();
-        if (BackPackConfig == null)
-            BackPackConfig = LoadBackPack(FileNameToSave);
         Assert.IsNotNull(BackPackConfig);
         Assert.IsNotNull(BackPackConfig.Items, "no items");
         BackPackConfig.Items.ForEach(AddToStash);
@@ -37,6 +35,7 @@ public class BackPack : MonoBehaviour
     /// Adding in any item taken in to the list if not over Capicity
     public void AddToStash(Item item)
     {
+        if (Inventory.Count >= ListCapacity) return;
         Inventory.Add(item);
         BackPackChange.Invoke(currentBackPack);
         currentBackPack.InitInventory = Inventory;
@@ -71,19 +70,22 @@ public class BackPack : MonoBehaviour
     // Raise the list capacity
     public void RaiseCapacity(int amount)
     {
-        ListCapicty += amount;
+        ListCapacity += amount;
         Debug.Log("Raised Capacity by:" + amount);
     }
 
     // Lower the list capacity
     public void LowerCapacity(int amount)
     {
-        ListCapicty -= amount;
+        ListCapacity -= amount;
         Debug.Log("Lowered Capacity by:" + amount);
     }
 
     public void SaveBackPack(string filename, BackPackConfig backPack)
     {
+        //var bp = ScriptableObject.CreateInstance<BackPackConfig>();
+        //bp.InitInventory = backPack.InitInventory;
+        currentBackPack.InitInventory = Inventory;
         var json = JsonUtility.ToJson(currentBackPack, true);
         var path = Application.persistentDataPath + string.Format("/{0}.json", filename);
         File.WriteAllText(path, json);
@@ -98,8 +100,8 @@ public class BackPack : MonoBehaviour
     public void Load()
     {
         currentBackPack = LoadBackPack(FileNameToSave);
-        BackPackChange.Invoke(currentBackPack);
-        currentBackPack.InitInventory = Inventory;
+        Inventory = currentBackPack.InitInventory;
+        BackPackChange.Invoke(currentBackPack);  
     }
     public BackPackConfig LoadBackPack(string filename)
     {
@@ -122,10 +124,6 @@ public class BackPack : MonoBehaviour
         var asset = Resources.FindObjectsOfTypeAll<BackPackConfig>().FirstOrDefault();
         JsonUtility.FromJsonOverwrite(json, asset);
         backpack = asset;
-        foreach (var b in backpack.Items)
-        {
-            __Inventory.Add(b);
-        }
         return backpack;
     }
 
