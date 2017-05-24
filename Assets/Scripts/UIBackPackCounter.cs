@@ -16,7 +16,10 @@ public class UIBackPackCounter : MonoBehaviour
     public void UpdateText(BackPack bag)
     {
         TheText.text = "Items: \n";
-        foreach (var item in bag.Inventory)
-            TheText.text += item.name + "\n";
+        if (bag.Inventory == null)
+            TheText.text = "Empty";
+        else
+            foreach (var item in bag.Inventory)
+                TheText.text += item.name + "\n";
     }
 }
