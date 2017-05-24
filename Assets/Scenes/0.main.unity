@@ -1202,7 +1202,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: BackPack+OnBackPackChange, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  BackPackConfig: {fileID: 0}
+  BackPackConfig: {fileID: 11400000, guid: 48f45fda498e58045af1e72406b85cd3, type: 2}
   Inventory: []
   ListCapicty: 0
   __Inventory: []
